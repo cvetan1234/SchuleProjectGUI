@@ -15,6 +15,23 @@ public class Translator extends Sound {
 	public static void main(String[] args) {
 		JFrame f = new JFrame("Translator");
 		f.setSize(615,500);
+		f.getContentPane().setBackground(new Color(54,129,74));
+		
+		JPanel panel1 = new JPanel();  
+	    panel1.setBounds(0,0,615,164);    
+	    panel1.setBackground(Color.white); 
+	    
+	    JPanel panel2 = new JPanel();  
+	    panel2.setBounds(0,164,615,164);    
+	    panel2.setBackground(new Color(0,153,0));  
+	    
+	    JPanel panel3 = new JPanel();  
+	    panel3.setBounds(0,328,615,164);    
+	    panel3.setBackground(new Color(255,0,0));  
+	 
+	    f.add(panel1);
+	    f.add(panel2);
+	    f.add(panel3);
 		
 		JLabel l = new JLabel("Morse code translator", SwingConstants.CENTER);
 		l.setBounds(0,0,615,50);
@@ -83,15 +100,35 @@ public class Translator extends Sound {
 		reverse.setBounds(20,410,50,30); // set x axis, y axis, width, height  of the JButton
 		quit.setBounds(530,410,50,30); // set x axis, y axis, width, height  of the JButton
 		
+		JButton start = new JButton("Morse code translator: bulgarian <-> morse code");
+		start.setBounds(90,195,450,100); 
+		start.setBackground(new Color(0,153,0));
+		start.setFont(new Font("Arial", Font.ITALIC, 15));
+		f.add(start);
+		start.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){ 
+			reverse.setBackground(new Color(233,177,80));	
+			read.setBackground(new Color(233,177,80));
+			quit.setBackground(new Color(233,177,80));
+			translate.setBackground(new Color(233,177,80));
+			reversed.setForeground(Color.yellow);
+			l.setFont(new Font("", Font.BOLD, 17));
+			l.setBackground(new Color(233,177,80));
+			f.remove(start);
+			f.remove(panel1);
+			f.remove(panel2);
+			f.remove(panel3);
+			f.add(translate); 
+			f.add(read);
+			f.add(quit);
+			f.add(reverse);
+			f.add(reversed);
+			f.add(l);
+			f.add(t);
+			f.add(t1);
+			}
+		});
 		
-		f.add(translate); //add the elements to the Frame
-		f.add(read);
-		f.add(reversed);
-		f.add(quit);
-		f.add(l);
-		f.add(reverse);
-		f.add(t);
-		f.add(t1);
 		f.setLayout(null); // using no layout managers
 		f.setVisible(true);
 	}
