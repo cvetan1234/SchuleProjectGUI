@@ -80,12 +80,17 @@ public class Translator extends Sound {
 		});
 		JButton reverse = new JButton("R"); //creating instance of JButton 
 		reverse.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){  
+			public void actionPerformed(ActionEvent e){
+				
 				reversedOrNotReversed = !reversedOrNotReversed;
 				if (reversedOrNotReversed) {
 					reversed.setText("Letters to morse code");
+					t.setText("Пример");
+					t1.setText(".--. .-. .. -- . .-. ");
 				} else {
 					reversed.setText("Morse code to letters");
+					t.setText(".--. .-. .. -- . .-. ");
+					t1.setText("Пример");
 				}
 			}  
 		});
@@ -126,6 +131,7 @@ public class Translator extends Sound {
 			f.add(l);
 			f.add(t);
 			f.add(t1);
+			f.repaint();
 			}
 		});
 		
