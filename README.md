@@ -56,4 +56,4 @@ java smg_2.Translator
 
 ## About
 
-This project was originally developed as a school programming project and is preserved here as part of my programming portfolio.
+This project was originally developed as a school programming project.
